@@ -7,7 +7,7 @@ background: linear-gradient(
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.7)
     ),
-    url('../img/fondo_educativo.jpg') center center / cover no-repeat fixed;
+    url('/static/img/fondo_educativo.jpg') center center / cover no-repeat fixed;
 
     line-height: 1.6;
     overflow-x: hidden;
