@@ -3,12 +3,12 @@ body {
     margin: 0;
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f5f7fa;
-background: linear-gradient(
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.7)
-    ),
-    url('/static/img/fondo_educativo.jpg') center center / cover no-repeat fixed;
-
+    /* Fondo con imagen relativa desde el CSS externo */
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url('../img/fondo_educativo.jpg') center center / cover no-repeat fixed;
     line-height: 1.6;
     overflow-x: hidden;
     animation: fondoMovimiento 25s ease-in-out infinite alternate;

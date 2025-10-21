@@ -1,3 +1,28 @@
+<style>
+/* 🌄 Fondo educativo visible y profesional */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f7fa;
+    /* Fondo con imagen desde Flask static */
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url("{{ url_for('static', filename='img/fondo_educativo.jpg') }}") center center / cover no-repeat fixed;
+    line-height: 1.6;
+    overflow-x: hidden;
+    animation: fondoMovimiento 25s ease-in-out infinite alternate;
+}
+
+/* ✨ Suaviza el movimiento del fondo */
+@keyframes fondoMovimiento {
+    0% { background-position: center top; }
+    50% { background-position: center center; }
+    100% { background-position: center bottom; }
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
