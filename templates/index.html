@@ -1,95 +1,197 @@
-<style>
-/* 🌄 Fondo educativo visible y profesional */
-body {
-    margin: 0;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f5f7fa;
-    /* Fondo con imagen desde Flask static */
-    background: linear-gradient(
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.7)
-        ),
-        url("{{ url_for('static', filename='img/fondo_educativo.jpg') }}") center center / cover no-repeat fixed;
-    line-height: 1.6;
-    overflow-x: hidden;
-    animation: fondoMovimiento 25s ease-in-out infinite alternate;
-}
-
-/* ✨ Suaviza el movimiento del fondo */
-@keyframes fondoMovimiento {
-    0% { background-position: center top; }
-    50% { background-position: center center; }
-    100% { background-position: center bottom; }
-}
-</style>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Plataforma Educativa</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio - Plataforma Educativa</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+<!-- Fondo Parallax -->
+<div class="parallax-container">
+    <div class="parallax-layer layer-back"></div>
+    <div class="parallax-layer layer-middle"></div>
+    <div class="parallax-layer layer-front"></div>
+</div>
+
 <header class="main-header">
     <div class="container header-flex">
-        <!-- 🟦 LOGO -->
         <a href="/" class="site-logo">
             <div class="logo-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="#00b4d8" stroke-width="2">
-                    <rect x="4" y="8" width="40" height="28" rx="4" ry="4" stroke="#00b4d8" fill="none"/>
-                    <path d="M4 8l20 14L44 8" stroke="#00b4d8" stroke-width="2" fill="none"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#00b4d8" stroke-width="2">
+                    <rect x="4" y="8" width="40" height="28" rx="4" ry="4"/>
+                    <path d="M4 8l20 14L44 8"/>
                 </svg>
             </div>
             <div class="logo-text">
-                <span class="logo-title">Consulta de Correo</span>
-                <span class="logo-sub">Plataforma Educativa</span>
+                <span class="logo-title">Plataforma Educativa</span>
+                <span class="logo-sub">Innovación · Colaboración · Aprendizaje</span>
             </div>
         </a>
 
-        <!-- 🟦 NAVEGACIÓN -->
         <nav class="main-nav">
             <ul>
-                <li><a href="/" class="active">Inicio</a></li>
-                <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/" class="nav-link active">Inicio</a></li>
+                <li><a href="/nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="/contacto" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
+<main class="content container">
 
-    <main class="content container">
-        <section class="intro">
-            <h2>Bienvenido a la Plataforma Educativa</h2>
-            <p>
-                Un espacio digital diseñado para fortalecer la comunicación entre docentes, estudiantes y padres, 
-                promoviendo la innovación educativa y el aprendizaje digital.
-            </p>
-        </section>
+    <!-- Sección de bienvenida -->
+    <section class="intro">
+        <h2>Bienvenido a la Plataforma Educativa</h2>
+        <p>Un espacio digital diseñado para fortalecer la comunicación entre docentes, estudiantes y padres, promoviendo la innovación educativa y el aprendizaje digital.</p>
+    </section>
 
-        <section class="features">
-            <h3>Funciones Principales</h3>
-            <div class="cards">
-                <div class="card">
-                    <h4>Gestión Académica</h4>
-                    <p>Organiza clases, tareas y calificaciones de manera eficiente y totalmente digital.</p>
-                </div>
-                <div class="card">
-                    <h4>Comunicación Efectiva</h4>
-                    <p>Conecta fácilmente a docentes, estudiantes y padres en un entorno colaborativo.</p>
-                </div>
-                <div class="card">
-                    <h4>Recursos Interactivos</h4>
-                    <p>Accede a materiales digitales y herramientas interactivas que impulsan el aprendizaje.</p>
-                </div>
+    <!-- Funciones principales -->
+    <section class="features">
+        <h3>Funciones Principales</h3>
+        <div class="cards">
+            <div class="card">
+                <h4>Gestión Académica</h4>
+                <p>Organiza clases, tareas y calificaciones de manera eficiente y totalmente digital.</p>
             </div>
-        </section>
-    </main>
+            <div class="card">
+                <h4>Comunicación Efectiva</h4>
+                <p>Conecta fácilmente a docentes, estudiantes y padres en un entorno colaborativo.</p>
+            </div>
+            <div class="card">
+                <h4>Recursos Interactivos</h4>
+                <p>Accede a materiales digitales y herramientas interactivas que impulsan el aprendizaje.</p>
+            </div>
+        </div>
+    </section>
 
-    <footer class="main-footer">
-        <p>© 2025 - Proyecto Tecnológico UCV | Desarrollado por <strong>Giancarlos Saucedo Reyes</strong></p>
-    </footer>
+    <!-- Plataformas educativas -->
+    <section class="educational-platforms">
+        <h3>Accede a Plataformas Educativas</h3>
+        <p>Inicia sesión en Edmodo, Canvas o Google Classroom para potenciar tu aprendizaje digital.</p>
+        <div class="cards">
+            <div class="card">
+                <h4>Edmodo</h4>
+                <button class="btn-platform open-modal" data-url="https://www.edmodo.com">Ver Edmodo</button>
+            </div>
+            <div class="card">
+                <h4>Canvas</h4>
+                <button class="btn-platform open-modal" data-url="https://www.instructure.com/canvas/">Ver Canvas</button>
+            </div>
+            <div class="card">
+                <h4>Google Classroom</h4>
+                <button class="btn-platform open-modal" data-url="https://classroom.google.com">Ver Classroom</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Innovación y Colaboración -->
+    <section class="cards-section">
+        <h2>Potenciamos la Innovación y la Colaboración</h2>
+        <div class="cards">
+            <div class="card">
+                <span class="section-button">Innovación</span>
+                <div class="icon">
+                    <svg viewBox="0 0 64 64" width="40" height="40" fill="#00b4ff">
+                        <path d="M32 2 L42 22 L62 24 L46 38 L50 58 L32 48 L14 58 L18 38 L2 24 L22 22 Z"/>
+                    </svg>
+                </div>
+                <p>Herramientas digitales modernas y metodologías innovadoras para potenciar la educación.</p>
+            </div>
+            <div class="card">
+                <span class="section-button">Colaboración</span>
+                <div class="icon">
+                    <svg viewBox="0 0 64 64" width="40" height="40" fill="#00b4ff">
+                        <circle cx="20" cy="20" r="10"/>
+                        <circle cx="44" cy="20" r="10"/>
+                        <circle cx="32" cy="44" r="10"/>
+                    </svg>
+                </div>
+                <p>Espacios donde docentes, estudiantes y padres pueden interactuar y trabajar juntos.</p>
+            </div>
+            <div class="card">
+                <span class="section-button">Aprendizaje Digital</span>
+                <div class="icon">
+                    <svg viewBox="0 0 64 64" width="40" height="40" fill="#00b4ff">
+                        <path d="M8 8 H56 V56 H8 Z M16 16 H48 V48 H16 Z"/>
+                    </svg>
+                </div>
+                <p>Materiales interactivos, quizzes y actividades gamificadas para mejorar el aprendizaje.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section class="cards-section">
+        <h2>Sobre Nosotros</h2>
+        <div class="cards">
+            <div class="card">
+                <span class="section-button">Nuestra Misión</span>
+                <div class="icon">
+                    <svg viewBox="0 0 64 64" width="40" height="40" fill="#00b4ff">
+                        <path d="M32 4 L12 20 L20 60 L44 60 L52 20 Z"/>
+                    </svg>
+                </div>
+                <p>Contribuir a la transformación digital de la educación local mediante soluciones tecnológicas accesibles y centradas en las necesidades de los usuarios.</p>
+            </div>
+            <div class="card">
+                <span class="section-button">Visión</span>
+                <div class="icon">
+                    <svg viewBox="0 0 64 64" width="40" height="40" fill="#00b4ff">
+                        <circle cx="32" cy="32" r="28"/>
+                    </svg>
+                </div>
+                <p>Ser una plataforma educativa de referencia que promueva la innovación, la colaboración y el aprendizaje digital en los colegios locales.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Modal general -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" id="modal-close">&times;</span>
+        <iframe src="" id="modal-iframe"></iframe>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const modalIframe = document.getElementById('modal-iframe');
+const modalClose = document.getElementById('modal-close');
+
+document.querySelectorAll('.open-modal').forEach(btn => {
+    btn.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalIframe.src = btn.dataset.url;
+    });
+});
+
+modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalIframe.src = '';
+});
+
+window.addEventListener('click', e => {
+    if(e.target === modal){
+        modal.style.display = 'none';
+        modalIframe.src = '';
+    }
+});
+
+// Parallax JS
+const layers = document.querySelectorAll('.parallax-layer');
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    layers.forEach((layer, index) => {
+        const speed = (index + 1) * 0.2;
+        layer.style.transform = `translateY(${scrollTop * speed}px)`;
+    });
+});
+</script>
+
 </body>
 </html>

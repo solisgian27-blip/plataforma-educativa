@@ -7,29 +7,57 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Sobre Nosotros</h1>
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="/nosotros">Nosotros</a>
-            <a href="/contacto">Contacto</a>
+
+<header class="main-header">
+    <div class="header-flex">
+        <h1>Plataforma Educativa</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros" class="active">Nosotros</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <section>
-            <h2>Nuestra Misión</h2>
-            <p>Contribuir a la transformación digital de la educación local mediante soluciones tecnológicas accesibles y centradas en las necesidades de los usuarios.</p>
-        </section>
+<main class="main-content">
 
-        <section>
-            <h2>Visión</h2>
-            <p>Ser una plataforma educativa de referencia que promueva la innovación, la colaboración y el aprendizaje digital en los colegios locales.</p>
-        </section>
-    </main>
+    <!-- SOBRE NOSOTROS -->
+    <div class="card-section">
+        <span class="section-button">Sobre Nosotros</span>
+        <h2>Plataforma Educativa para Colegios Locales</h2>
+        <p>
+            Nuestro objetivo es mejorar la comunicación entre docentes, estudiantes y padres, 
+            promoviendo la innovación educativa y el aprendizaje digital mediante soluciones modernas.
+        </p>
+    </div>
 
-    <footer>
-        <p>© 2025 - Proyecto Tecnológico UCV | Desarrollado por Giancarlos Saucedo Reyes</p>
-    </footer>
+    <!-- NUESTRA MISIÓN -->
+    <div class="card-section">
+        <span class="section-button">Nuestra Misión</span>
+        <h2>Misión</h2>
+        <p>
+            Contribuir a la transformación digital de la educación local mediante soluciones tecnológicas 
+            accesibles y centradas en las necesidades de los usuarios.
+        </p>
+    </div>
+
+    <!-- VISIÓN -->
+    <div class="card-section">
+        <span class="section-button">Visión</span>
+        <h2>Visión</h2>
+        <p>
+            Ser una plataforma educativa de referencia que promueva la innovación, la colaboración y el aprendizaje digital 
+            en los colegios locales.
+        </p>
+    </div>
+
+</main>
+
+<footer class="main-footer">
+    © 2025 - Proyecto Tecnológico UCV | Desarrollado por <strong>Giancarlos Saucedo Reyes</strong>
+</footer>
+
 </body>
 </html>

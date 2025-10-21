@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto - Plataforma Educativa</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<style>
+/* Fondo y tipografía */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #162447);
+    color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #0b3d91;
+    padding: 20px 0;
+}
+header h1 {
+    color: #00b4ff;
+    margin: 0;
+    font-size: 2.5rem;
+}
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+header nav a.active {
+    text-decoration: underline;
+}
+
+/* Contenedor principal */
+.main-content {
+    padding: 50px 20px;
+}
+
+/* Botón decorativo de sección */
+.section-button {
+    display: inline-block;
+    background: #00b4ff;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background 0.3s;
+}
+.section-button:hover {
+    transform: translateY(-2px);
+    background: #0096e6;
+}
+
+/* Tarjetas / cuadros para contacto */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin: 30px auto;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* Títulos de tarjeta */
+.card h3 {
+    color: #ffd700;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/* Texto de tarjeta */
+.card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f5f7fa;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background: #00b4ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 10px 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+.btn:hover {
+    background: #0096e6;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #0b3d91;
+    padding: 15px 0;
+    color: #fff;
+    margin-top: 50px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1><span class="section-button">Contacto</span></h1>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/nosotros">Nosotros</a>
+        <a href="/contacto" class="active">Contacto</a>
+    </nav>
+</header>
+
+<main class="main-content">
+    <!-- Correo -->
+    <div class="card">
+        <h3>Correo Electrónico</h3>
+        <p>Escríbenos a: <strong>contacto@plataformaeducativa.pe</strong></p>
+        <a href="mailto:contacto@plataformaeducativa.pe" class="btn">Enviar Correo</a>
+    </div>
+
+    <!-- Teléfono -->
+    <div class="card">
+        <h3>Teléfono</h3>
+        <p>Llámanos al: <strong>(01) 555-1234</strong></p>
+        <a href="tel:+015551234" class="btn">Llamar Ahora</a>
+    </div>
+
+    <!-- Redes / Plataformas educativas -->
+    <div class="card">
+        <h3>Plataformas Educativas</h3>
+        <p>Accede directamente a nuestras plataformas educativas:</p>
+        <a href="https://new.edmodo.com" target="_blank" class="btn">Edmodo</a>
+        <a href="https://www.instructure.com/canvas" target="_blank" class="btn">Canvas</a>
+        <a href="https://classroom.google.com" target="_blank" class="btn">Google Classroom</a>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 - Proyecto Tecnológico UCV | Desarrollado por <strong>Giancarlos Saucedo Reyes</strong></p>
+</footer>
+
+</body>
+</html>

@@ -7,25 +7,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Contáctanos</h1>
-        <nav>
-            <a href="/">Inicio</a>
-            <a href="/nosotros">Nosotros</a>
-            <a href="/contacto">Contacto</a>
+
+<header class="main-header">
+    <div class="header-flex">
+        <h1>Plataforma Educativa</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/contacto" class="active">Contacto</a></li>
+            </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <section>
-            <h2>¿Tienes alguna consulta?</h2>
-            <p>Escríbenos al correo: <strong>gisaucedore@ucvvirtual.edu.pe</strong></p>
-            <p>O llámanos al teléfono: <strong>(51) 910693746</strong></p>
-        </section>
-    </main>
+<main class="main-content">
+    <div class="card-section">
+        <span class="section-button">Contáctanos</span>
+        <h2>¿Tienes alguna consulta?</h2>
+        <p>
+            Escríbenos al correo: <strong>gisaucedore@ucvvirtual.edu.pe</strong><br>
+            O llámanos al teléfono: <strong>(51) 910693746</strong>
+        </p>
+    </div>
+</main>
 
-    <footer>
-        <p>© 2025 - Proyecto Tecnológico UCV | Desarrollado por Giancarlos Saucedo Reyes</p>
-    </footer>
+<footer class="main-footer">
+    © 2025 - Proyecto Tecnológico UCV | Desarrollado por <strong>Giancarlos Saucedo Reyes</strong>
+</footer>
+
 </body>
 </html>
