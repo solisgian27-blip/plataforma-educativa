@@ -1,0 +1,225 @@
+/* 🌄 Fondo educativo visible y profesional */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f7fa;
+background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.7)
+    ),
+    url('../img/fondo_educativo.jpg') center center / cover no-repeat fixed;
+
+    line-height: 1.6;
+    overflow-x: hidden;
+    animation: fondoMovimiento 25s ease-in-out infinite alternate;
+}
+
+/* ✨ Suaviza el movimiento del fondo */
+@keyframes fondoMovimiento {
+    0% { background-position: center top; }
+    50% { background-position: center center; }
+    100% { background-position: center bottom; }
+}
+
+/* --- Encabezado elegante --- */
+header {
+    background: rgba(0, 20, 60, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    text-align: center;
+    padding: 1.8em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #00c8ff;
+    text-shadow: 0 0 12px rgba(0, 200, 255, 0.9);
+}
+
+/* --- Navegación --- */
+nav {
+    margin-top: 12px;
+}
+
+nav a {
+    color: #e9f3ff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #00c8ff;
+    text-shadow: 0 0 8px #00c8ff;
+}
+
+/* --- Contenido principal --- */
+main {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2, h3, h4 {
+    color: #00c8ff;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.9);
+}
+
+/* --- Secciones con fondo translúcido --- */
+section {
+    margin-bottom: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(0, 20, 60, 0.6);
+    border-radius: 15px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.2);
+}
+
+/* --- Tarjetas --- */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 25px;
+    width: 270px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.card h4 {
+    color: #00c8ff;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
+}
+
+/* --- Pie de página --- */
+footer {
+    background: rgba(0, 0, 30, 0.9);
+    color: #c9d8ff;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Logo y encabezado flexible --- */
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon svg {
+    filter: drop-shadow(0 0 6px #00b4d8);
+}
+
+.logo-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: block;
+    color: #00c8ff;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    color: #bde8ff;
+    letter-spacing: 0.5px;
+}
+
+/* --- Navegación principal --- */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #00b4d8;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #00b4d8;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 85%;
+    }
+}

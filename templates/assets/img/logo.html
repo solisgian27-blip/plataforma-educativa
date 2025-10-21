@@ -1,0 +1,161 @@
+<!-- LOGO COMPONENT START -->
+<style>
+  /* ====== Logo component styles (pégalo en tu CSS global o aquí mismo) ====== */
+
+  .site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Logo mark (SVG wrapper) */
+  .logo-mark {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    display: inline-grid;
+    place-items: center;
+    position: relative;
+  }
+
+  /* Circular background with gradient */
+  .logo-mark .mark-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #0b5ed7 0%, #0077ff 50%, #00b4ff 100%);
+    box-shadow: 0 6px 18px rgba(3, 10, 41, 0.25), inset 0 -4px 12px rgba(255,255,255,0.06);
+    display: grid;
+    place-items: center;
+    transform-origin: center;
+    transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  }
+
+  /* Slight hover lift when placed on clickable area */
+  .site-logo:hover .logo-mark .mark-bg {
+    transform: translateY(-4px) rotate(-2deg);
+    box-shadow: 0 10px 28px rgba(3, 10, 41, 0.3);
+  }
+
+  /* Mail + shield SVG styling inside */
+  .logo-mark svg {
+    width: 54%;
+    height: 54%;
+    display: block;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.18));
+  }
+
+  /* Sparkle (destello) — animated pseudo element */
+  .logo-mark::after {
+    content: "";
+    position: absolute;
+    width: 26%;
+    height: 26%;
+    right: 6%;
+    top: 6%;
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 18%, rgba(255,255,255,0) 50%);
+    transform: scale(0.9) rotate(30deg);
+    opacity: 0.0;
+    pointer-events: none;
+    border-radius: 50%;
+    animation: sparkle 3s linear infinite;
+    mix-blend-mode: overlay;
+  }
+
+  @keyframes sparkle {
+    0%   { opacity: 0; transform: translateY(0) scale(0.6) rotate(10deg); }
+    8%   { opacity: 0.9; transform: translateY(-2px) scale(1) rotate(10deg); }
+    18%  { opacity: 0; transform: translateY(-6px) scale(0.7) rotate(20deg); }
+    100% { opacity: 0; transform: translateY(0) scale(0.6) rotate(30deg); }
+  }
+
+  /* Text area */
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-title {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #06233a; /* dark navy */
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo-sub {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #405b6b;
+    font-size: 12px;
+    margin: 0;
+    margin-top: 2px;
+    opacity: 0.95;
+  }
+
+  /* Compact variant (for small screens / mobile) */
+  .site-logo.compact .logo-text { display: none; }
+  .site-logo.compact .logo-mark { width: 48px; height: 48px; min-width: 48px; min-height: 48px; }
+
+  /* Accessible focus outline when used as a link */
+  .site-logo:focus {
+    outline: 3px solid rgba(2, 117, 216, 0.18);
+    outline-offset: 6px;
+    border-radius: 10px;
+  }
+
+  /* Dark-mode friendly override (optional) */
+  @media (prefers-color-scheme: dark) {
+    .logo-title { color: #eaf6ff; }
+    .logo-sub { color: #cce7ff; opacity: 0.85; }
+    .logo-mark .mark-bg {
+      background: linear-gradient(135deg, #0f62fe 0%, #0a84ff 50%, #00b4ff 100%);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6), inset 0 -4px 10px rgba(255,255,255,0.03);
+    }
+  }
+
+  /* Make responsive: shrink text on narrow widths */
+  @media (max-width: 420px) {
+    .logo-title { font-size: 15px; }
+    .logo-sub { font-size: 11px; }
+    .logo-mark { width: 56px; height: 56px; min-width: 56px; min-height: 56px; }
+  }
+
+</style>
+
+<!-- Markup: link (so clicking logo can go to home). Cambia href si quieres otro destino -->
+<a href="index.php" class="site-logo" aria-label="Consulta de Correo Electrónico - Ir al inicio">
+  <!-- logo mark (SVG compuesto: sobre + escudo) -->
+  <span class="logo-mark" role="img" aria-hidden="true">
+    <span class="mark-bg" aria-hidden="true">
+      <!-- Inline SVG: sencillo, escalable y personalizable -->
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <!-- Shield base -->
+        <path d="M32 6c0 0-12 4-16 8v10c0 12 8 22 16 24 8-2 16-12 16-24V14c-4-4-16-8-16-8z"
+              fill="rgba(255,255,255,0.14)" />
+        <!-- Shield outline -->
+        <path d="M32 4s-13 4.5-18 9V24c0 13 9 24 18 26 9-2 18-13 18-26V13c-5-4.5-18-9-18-9z"
+              fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+        <!-- Envelope (white) -->
+        <g transform="translate(6,14) scale(0.8)">
+          <rect x="6" y="10" width="40" height="28" rx="3" ry="3" fill="#ffffff" opacity="0.95"/>
+          <path d="M6 10 L26 26 L46 10" fill="none" stroke="#0b5ed7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 10 L26 26 L46 10" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.25"/>
+        </g>
+      </svg>
+    </span>
+  </span>
+
+  <!-- Text block -->
+  <span class="logo-text">
+    <span class="logo-title">Consulta de Correo Electrónico</span>
+    <span class="logo-sub">Verificación · Recuperación · Seguridad</span>
+  </span>
+</a>
+<!-- LOGO COMPONENT END -->
